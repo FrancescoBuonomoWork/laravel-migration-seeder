@@ -1,8 +1,8 @@
 @extends('layouts/layout')
-
+{{-- @use (Carbon\Carbon); --}}
 @section('content')
 {{-- @dd($trains); --}}
-
+{{-- @dd(Carbon::now()); --}}
 <main>
     <div class="container">
         <div class="row">
@@ -33,11 +33,8 @@
                         <td>{{$train->arrival_time}}</td>
                         <td>{{$train->train_code}}</td>
                         <td>{{$train->wagons_number}}</td>
-                        @if ($train->in_time = 0 ? 'no':'si')
-                        
-                        <td>{{$train->in_time}}</td>
-                        @endif
-                        <td>{{$train->suppressed}}</td>
+                        <td>{{$train->in_time === 0 ? 'no':'si'}}</td>
+                        <td>{{$train->suppressed === 0 ? 'no':'si'}}</td>
                       </tr>
                     </tbody>
                     @endforeach
