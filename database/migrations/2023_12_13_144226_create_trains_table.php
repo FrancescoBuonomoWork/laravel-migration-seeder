@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('arrival_station',50);
             $table->dateTime('departure_time');
             $table->dateTime("arrival_time");
-            $table->unsignedSmallInteger('train_code');
+            $table->unsignedMediumInteger('train_code');
             $table->unsignedTinyInteger('wagons_number');
             $table->boolean('in_time')->default(true);
             $table->boolean('suppressed')->default(false);
