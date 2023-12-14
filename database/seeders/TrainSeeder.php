@@ -7,6 +7,7 @@ use Faker\Generator as Faker;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
+
 class TrainSeeder extends Seeder
 {
     /**
@@ -17,7 +18,7 @@ class TrainSeeder extends Seeder
         for($i = 0;$i < 100 ; $i++){
             $new_train = new Train();
 
-            $new_train->brand = $faker->word();
+            $new_train->brand = $faker->company();
             // la citta di destinazione deve essere sempre diversa da quella di partenza
             $new_train->departure_station = $faker->city();
             
